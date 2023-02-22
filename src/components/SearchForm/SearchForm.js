@@ -9,27 +9,28 @@ import {
   SearchFormInput,
 } from './SearchForm.styled';
 
-export const SearchFilmsForm = ({ onSubmit }) => {
+ const SearchFilmsForm = ({ onSubmit }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if(searchValue === ''){...?...}
+    if (searchValue === '') {
+      return;
+    }
     onSubmit(searchValue);
-    console.log(searchValue);
-    setSearchValue('');
   };
 
-  const handleNameChange = e => {
-    setSearchValue(e.currentTarget.value.toLowerCase());
+   const handleNameChange = e => {
+     let searchValueFilms = e.currentTarget.value.trim();
+    setSearchValue(searchValueFilms.toLowerCase());
   };
 
   return (
     <SearchBar>
       <SearchForm onSubmit={handleSubmit}>
-        <SearchFormButton type="submit" className="button">
+        <SearchFormButton type="submit" >
           <FcSearch style={{ width: '2.5em', height: '2.5em' }} />
-          <SearchFormButtonLabel className="button-label">
+          <SearchFormButtonLabel >
             Search
           </SearchFormButtonLabel>
         </SearchFormButton>
@@ -47,5 +48,7 @@ export const SearchFilmsForm = ({ onSubmit }) => {
     </SearchBar>
   );
 };
+
+export default SearchFilmsForm;
 
 SearchFilmsForm.propTypes = { onSubmit: PropTypes.func };

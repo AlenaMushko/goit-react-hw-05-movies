@@ -1,28 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  margin: 30px auto 0 auto;
-`;
-
-export const List = styled.ul`
-  display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-export const Item = styled.li`
-  cursor: pointer;
-  position: relative;
-    :hover{
-    scale:1.05;
-  }
+export const Wraper = styled.div`
+display:flex;
+gap:28px;
+ margin: 30px  0 0 0;
 `;
 
 export const Img = styled.img`
@@ -51,3 +32,18 @@ export const Box = styled.p`
   justify-content: center;
   align-items: center;
 `;
+export const FilmItem = styled.li`
+color:whitesmoke;
+display: block;
+border-radius:4px;
+border:2px solid tomato;
+text-align:center;
+max-width:170px;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+:first-child{
+  margin-bottom:20px;
+}
+:hover{
+  background-color:tomato;
+}
+`
