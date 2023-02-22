@@ -4,8 +4,8 @@ const Cast = () => {
   return (
     <ul>
   <li>
-    <img />
-    <h2></h2>
+    {/* <img />
+    <h2></h2> */}
     <p>Character: { }</p>
   </li>
   

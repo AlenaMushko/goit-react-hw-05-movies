@@ -1,4 +1,4 @@
-import { generatePath, Link, NavLink } from 'react-router-dom';
+import { generatePath, NavLink } from 'react-router-dom';
 import { PAGE_NAMES } from 'router/paths';
 import noPhoto from '../../img/noPhoto .png';
 import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';
