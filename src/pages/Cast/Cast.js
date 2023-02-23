@@ -23,8 +23,6 @@ const Cast = () => {
         setIsLoading(false);
       });
   }, [id]);
-
-  console.log(infoAboutFilm);
   return (
     <ul>
       {isLoading && <Loader />}
