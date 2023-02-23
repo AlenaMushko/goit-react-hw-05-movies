@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
-
 import { CompleteInformationFilm } from 'components/API';
 import { BackLink } from 'components/BackLink/BackLink';
-import { useLocation, useParams } from 'react-router-dom';
 import { Container } from './InfoFilms.styled';
 import FilmCard from 'components/FilmCard/FilmCard';
 

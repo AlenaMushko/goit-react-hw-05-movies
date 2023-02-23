@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { generatePath, NavLink, Outlet } from 'react-router-dom';
 import { PAGE_NAMES } from 'router/paths';
 import noPhoto from '../../img/noPhoto .png';
@@ -67,3 +68,17 @@ const FilmCard = ({ film }) => {
 };
 
 export default FilmCard;
+
+FilmCard.prototype = {
+  film: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+     title: PropTypes.string,
+      poster_path: PropTypes.string,
+      vote_average: PropTypes.number,
+      release_date: PropTypes.number,
+      overview: PropTypes.string,
+      genres: PropTypes.number,
+    }),
+  ).isRequired,
+};

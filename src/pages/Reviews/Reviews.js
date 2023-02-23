@@ -1,7 +1,7 @@
-import { ReviewsFilm } from 'components/API';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
+import { ReviewsFilm } from 'components/API';
 import { Item, Span } from './Reviews.styled';
 import { FcReadingEbook } from "react-icons/fc";
 

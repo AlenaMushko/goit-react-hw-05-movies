@@ -1,7 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Loader } from 'components/Loader/Loader';
-
 import { ApiByQuery } from 'components/API';
 import SearchFilmsForm from 'components/SearchForm/SearchForm';
 import FilmList from 'components/FilmList/FilmList';

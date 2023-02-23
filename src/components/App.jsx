@@ -17,8 +17,9 @@ export const App = () => {
       <Header />
       <Suspense>
         <Routes>
-          <Route path={PAGE_NAMES.homePage} element={<Home />} />
           <Route path={PAGE_NAMES.moviesPage} element={<Movies />} />
+          <Route path={PAGE_NAMES.homePage} element={<Home />} />
+          
           <Route path={PAGE_NAMES.filmInfo} element={<InfoFilms />}>
             <Route path="cast" element={<Cast />} />
             <Route path={PAGE_NAMES.review} element={<Reviews />} />

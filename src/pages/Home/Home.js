@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 import { ApiTrending } from 'components/API';
 import { Loader } from 'components/Loader/Loader';
 import { Container, Title } from './Home.styled';
@@ -11,9 +10,9 @@ const Home = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+     setIsLoading(true);
     const FetchTrending = async () => {
       try {
-        setIsLoading(true);
         const films = await ApiTrending();
         seFilms(films.data.results);
       } catch (error) {
@@ -24,6 +23,7 @@ const Home = () => {
     };
     FetchTrending();
   }, []);
+
   return (
     <main>
       <Container>

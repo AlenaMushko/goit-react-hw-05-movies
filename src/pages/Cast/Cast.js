@@ -1,6 +1,6 @@
-import { CastFilm } from 'components/API';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CastFilm } from 'components/API';
 import noPhoto from '../../img/noPhoto .png';
 import { Loader } from 'components/Loader/Loader';
 import { Img, Item, Span, Wraper } from './Cast.styled';

@@ -1,13 +1,15 @@
-import { Container, List, Item, Img, FilmTitle, Box } from './FilmList.styled';
-import noPhoto from '../../img/noPhoto .png';
+import PropTypes from 'prop-types';
 import { generatePath, Link } from 'react-router-dom';
 import { PAGE_NAMES } from 'router/paths';
+import { Container, List, Item, Img, FilmTitle, Box } from './FilmList.styled';
+import noPhoto from '../../img/noPhoto .png';
+
 
 const FilmList = ({ films }) => {
   return (
     <Container>
       <List>
-        {films.map(({ id, poster_path, title, vote_average }) => (
+        {films?.map(({ id, poster_path, title, vote_average }) => (
           <Item key={id}>
             <Link to={generatePath(PAGE_NAMES.filmInfo, { id })}>
               <Img
@@ -29,3 +31,13 @@ const FilmList = ({ films }) => {
 };
 
 export default FilmList;
+FilmList.prototype = {
+  films: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+     title: PropTypes.string,
+      poster_path: PropTypes.string,
+      vote_average: PropTypes.number,
+    }),
+  ).isRequired,
+};
