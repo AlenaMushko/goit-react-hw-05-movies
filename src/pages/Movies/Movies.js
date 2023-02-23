@@ -47,7 +47,6 @@ const Movies = () => {
     const nextFilmName = filmName !== '' ? { filmName } : {};
     setSearchParams(nextFilmName);
     seFilms([]);
-    console.log(filmName);
   };
 
   return (

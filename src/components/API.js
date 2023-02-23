@@ -30,6 +30,6 @@ export async function CastFilm(id) {
 }
 
 export async function ReviewsFilm(id) {
-   return  Api(`movie/${id}/reviews/credits?api_key=${KEY}`);
+   return  Api(`movie/${id}/reviews?api_key=${KEY}`);
 }
 

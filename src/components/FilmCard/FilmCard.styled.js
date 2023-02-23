@@ -43,7 +43,4 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 :first-child{
   margin-bottom:20px;
 }
-:hover{
-  background-color:tomato;
-}
 `
