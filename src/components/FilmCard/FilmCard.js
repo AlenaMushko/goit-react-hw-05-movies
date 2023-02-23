@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import { generatePath, NavLink, Outlet } from 'react-router-dom';
 import { PAGE_NAMES } from 'router/paths';
 import noPhoto from '../../img/noPhoto .png';
-import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';
-
+import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';        
 const FilmCard = ({ film }) => {
   const {
     id,
