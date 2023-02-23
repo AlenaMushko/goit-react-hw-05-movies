@@ -9,7 +9,7 @@ import FilmCard from 'components/FilmCard/FilmCard';
 const InfoFilms = () => {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = location.state?.from ?? '/movies';
   // const params = useParams();
   const { id } = useParams();
   const [infoAboutFilm, setInfoAboutFilm] = useState(null);
