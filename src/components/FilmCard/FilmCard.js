@@ -6,7 +6,6 @@ import noPhoto from '../../img/noPhoto .png';
 import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';
 const FilmCard = ({ film }) => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/movies';
   const {
     id,
     poster_path,
