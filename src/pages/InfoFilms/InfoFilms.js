@@ -19,7 +19,7 @@ const InfoFilms = () => {
     setIsLoading(true);
     CompleteInformationFilm(id)
       .then(resolve => {
-        setIsLoading(true);
+        // setIsLoading(true);
         setInfoAboutFilm(resolve);
       })
       .catch(error => {

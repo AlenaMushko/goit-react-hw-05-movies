@@ -5,7 +5,7 @@ import { Title, Container } from "./Error.styled";
 const Error = () => {
   return (<Container>
     <Title>Error, something went wrong</Title>
-    <Link to={PAGE_NAMES.homePage}>Go to home page</Link>
+    <Link to={PAGE_NAMES.homePage} style={{color:"tomato"}}>Go to home page</Link>
   </Container>
     
   )

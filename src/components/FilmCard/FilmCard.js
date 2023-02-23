@@ -34,7 +34,9 @@ const FilmCard = ({ film }) => {
         <hr />
         <h2>Additional information</h2>
         <ul>
-          <NavLink to={generatePath(PAGE_NAMES.cast, { id })} style={({ isActive }) => ({
+
+          <NavLink   to={generatePath(PAGE_NAMES.cast, { id })} 
+            style={({ isActive }) => ({
               color: isActive ? 'rgb(165, 14, 14)' : 'whitesmoke',
             })}>
             <FilmItem><h3>Cast</h3> </FilmItem>
