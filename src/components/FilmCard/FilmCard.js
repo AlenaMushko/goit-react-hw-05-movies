@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
-import { generatePath, NavLink, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import { generatePath, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { PAGE_NAMES } from 'router/paths';
 import noPhoto from '../../img/noPhoto .png';
-import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';        
+import { FilmItem, FilmTitle, Img, Wraper } from './FilmCard.styled';
 const FilmCard = ({ film }) => {
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
   const {
     id,
     poster_path,
@@ -43,6 +46,7 @@ const FilmCard = ({ film }) => {
         <ul>
           <NavLink
             to={generatePath(PAGE_NAMES.cast, { id })}
+            state={{ from: location.state?.from }}
           >
             <FilmItem>
               <h3>Cast</h3>{' '}
@@ -50,9 +54,7 @@ const FilmCard = ({ film }) => {
           </NavLink>
           <NavLink
             to={generatePath(PAGE_NAMES.review, { id })}
-            style={({ isActive }) => ({
-              color: isActive ? 'rgb(165, 14, 14)' : 'whitesmoke',
-            })}
+            state={{ from: location.state?.from }}
           >
             <FilmItem>
               <h3>Reviews</h3>
@@ -60,7 +62,9 @@ const FilmCard = ({ film }) => {
           </NavLink>
         </ul>
         <hr />
-        <Outlet />
+        <Suspense fallback={<div>Loading page...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
@@ -72,12 +76,12 @@ FilmCard.prototype = {
   film: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-     title: PropTypes.string,
+      title: PropTypes.string,
       poster_path: PropTypes.string,
       vote_average: PropTypes.number,
       release_date: PropTypes.number,
       overview: PropTypes.string,
       genres: PropTypes.number,
-    }),
+    })
   ).isRequired,
 };

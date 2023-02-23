@@ -5,6 +5,7 @@ import noPhoto from '../../img/noPhoto .png';
 import { Loader } from 'components/Loader/Loader';
 import { Img, Item, Span, Wraper } from './Cast.styled';
 
+
 const Cast = () => {
   const { id } = useParams();
   const [infoAboutFilm, setInfoAboutFilm] = useState(null);
@@ -27,7 +28,7 @@ const Cast = () => {
     <ul>
       {isLoading && <Loader />}
       {infoAboutFilm?.map(({ id, character, original_name, profile_path }) => (
-        <Item key={id}>
+        <Item key={id} >
           <Wraper>
             <Img
               src={
